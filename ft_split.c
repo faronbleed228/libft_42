@@ -6,13 +6,13 @@
 /*   By: ypopovyc <@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:13:48 by ypopovyc          #+#    #+#             */
-/*   Updated: 2026/04/26 12:06:32 by ypopovyc         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:14:58 by ypopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
 	int	words;
 	int	in_word;
@@ -33,7 +33,7 @@ int	ft_count_words(char const *s, char c)
 	return (words);
 }
 
-char	**ft_free(char **ptr, int i)
+static char	**ft_free(char **ptr, int i)
 {
 	while (i > 0)
 	{

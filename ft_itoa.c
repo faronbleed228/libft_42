@@ -6,13 +6,13 @@
 /*   By: ypopovyc <@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 16:28:26 by ypopovyc          #+#    #+#             */
-/*   Updated: 2026/04/23 20:33:29 by ypopovyc         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:15:21 by ypopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	lenght;
 

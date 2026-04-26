@@ -6,11 +6,11 @@
 /*   By: ypopovyc <@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 21:20:30 by ypopovyc          #+#    #+#             */
-/*   Updated: 2026/04/26 11:35:39 by ypopovyc         ###   ########.fr       */
+/*   Updated: 2026/04/26 12:15:07 by ypopovyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
