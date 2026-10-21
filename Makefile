@@ -34,3 +34,11 @@ re: fclean all
 
 .PHONY: all bonus clean fclean re
 
+
+SANITIZERS ?= -g -fsanitize=address,undefined -fno-pie -no-pie
+test:
+	@mkdir -p .tests
+	$(CC) $(CFLAGS) $(SANITIZERS) -I. tests/list_failures.c ft_lstnew.c ft_lstmap.c ft_lstadd_back.c ft_lstlast.c ft_lstclear.c ft_lstsize.c -Wl,--wrap=malloc -o .tests/list_failures
+	./.tests/list_failures
+
+.PHONY: test

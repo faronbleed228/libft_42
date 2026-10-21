@@ -161,4 +161,26 @@ AI (Claude by Anthropic) was used in the following ways during this project:
 - **Debugging assistance**: Describing incorrect outputs and getting help identifying logical errors in implementations (e.g., off-by-one errors in `ft_substr` or null-terminator handling).
 - **README drafting**: Generating the structure and initial content of this README file.
 
-All code was written, reviewed, and validated independently. AI was not used to generate function implementations directly.
+The original curriculum implementation was written by the student. The maintenance fixes and regression tests described below were prepared with OpenAI Codex.
+
+## List ownership and public regressions
+
+`ft_lstnew(NULL)` returns an allocated node with NULL content and NULL next.
+It returns NULL only if node allocation fails. `ft_lstmap` accepts NULL content
+returned by its callback; NULL content is not itself an allocation failure.
+The caller supplies callbacks that can handle such content. If a node cannot be
+allocated, the delete callback releases the newly mapped content and all content
+already added to the result; the source list is preserved.
+
+```sh
+make re
+make test
+```
+
+The Linux/GCC regression target uses a malloc wrapper and ASan/UBSan to test
+allocation failures at every output node, cleanup, NULL content, empty input,
+and missing callbacks. Set `SANITIZERS=` for an unsanitized build.
+The 2026-10-21 environment required `ASAN_OPTIONS=detect_leaks=0`;
+LeakSanitizer could not inspect its threads. No full 42 moulinette is included.
+
+Maintenance fixes and public tests were prepared with OpenAI Codex.
